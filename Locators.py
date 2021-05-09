@@ -4,13 +4,15 @@ class Locators():
 
     # Homepage
     SIGN_IN_BUTTON = (By.CSS_SELECTOR, "a.login")
-    PRODUCT_CARD = (By.XPATH, '//*[@id="homefeatured"]/li[2]')
+    PRODUCT_CARD = '//*[@id="homefeatured"]/li[2]'
     MORE_BUTTON = (By.XPATH, '//*[@id="homefeatured"]/li[2]/div/div[2]/div[2]/a[2]/span')
     ADD_TO_CART_BUTTON = (By.XPATH, '//*[@id="homefeatured"]/li[2]/div/div[2]/div[2]/a[1]/span')
     QUICKVIEW_BUTTON = (By.XPATH, '//*[@id="homefeatured"]/li[2]/div/div[1]/div/a[2]/span')
     CATEGORIES_WOMEN_BUTTON = (By.XPATH,'//*[@id="footer"]/div/section[2]/div/div/ul/li/a')
     SEARCH_FIELD = (By.ID, 'search_query_top')
     SEARCH_SUBMIT = (By.NAME, 'submit_search')
+    LOGO_URL = (By.XPATH, '//*[@id="header_logo"]/a/img')
+    ADD_FROM_HOME_STATUS = (By.XPATH, '//*[@id="layer_cart"]/div[1]/div[1]/h2')
 
     # AUTH PAGE
     REG_EMAIL_FIELD = (By.ID, 'email_create')
@@ -41,6 +43,26 @@ class Locators():
     REG_ALERT_SUCCESS = (By.CSS_SELECTOR, 'p.info-account')
     REG_ALERT_FAILED = (By.XPATH, '//*[@id="center_column"]/div/p')
     REG_ALERT_ALREADY_REGISTERED = (By.XPATH, '//*[@id="create_account_error"]/ol/li')
+
+    # MY ACCOUNT PAGE
+    MY_ORDER_BUTTON = (By.XPATH, '//*[@id="center_column"]/div/div[1]/ul/li[1]/a/span')
+    MY_ADDRESSES_BUTTON = (By.XPATH, '//*[@id="center_column"]/div/div[1]/ul/li[3]/a/span')
+    MY_WISHLISTS_BUTTON = (By.XPATH, '//*[@id="center_column"]/div/div[2]/ul/li/a/span')
+
+    # MY ADDRESS PAGE
+    ADDRESS_DELETE_BUTTON = (By.XPATH, '//*[@id="center_column"]/div[1]/div/div/ul/li[9]/a[2]/span')
+    ADDRESS_ADD_NEW_BUTTON = (By.XPATH, '//*[@id="center_column"]/div[2]/a/span')
+    ADDRESS_ADDRESS1_FIELD = (By.ID, 'address1')
+    ADDRESS_CITY_FIELD = (By.ID, 'city')
+    ADDRESS_STATE_FIELD = (By.ID, 'id_state')
+    ADDRESS_POSTCODE_FIELD = (By.ID, 'postcode')
+    ADDRESS_COUNTRY_FIELD = (By.ID, 'id_country')
+    ADDRESS_MOBILE_PHONE_FIELD = (By.ID, 'phone_mobile')
+    ADDRESS_ADDITIONAL_INFO = (By.ID, 'other')
+    ADDRESS_ALIAS_FIELD = (By.ID, 'alias')
+    ADDRESS_SAVE_BUTTON = (By.ID, 'submitAddress')
+
+    ADDRESS_INFO = (By.CSS_SELECTOR, 'h3.page.subheading')
 
 
 

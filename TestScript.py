@@ -83,3 +83,27 @@ class RegisterTest(BaseTest):
         self.assertEqual(TestData.ALERT_ALREADY_REGISTERED, register_info)
 
 
+class AddToCartTest(BaseTest):
+    def test_add_from_home(self):
+
+        # Load Home Page
+        self.homepage = HomePage(self.driver)
+
+        # Click Sign In Button
+        self.homepage.signin()
+
+        # Load Auth Page
+        self.authpage = AuthPage(self.homepage.driver)
+
+        # Sign In To Account
+        self.authpage.sign_in_success()
+
+        # Click Logo
+        self.homepage.logo()
+
+        # Add to Cart (From Home)
+        self.homepage.add_from_home()
+
+        # Assertion
+        status = self.homepage.get_text(Locators.ADD_FROM_HOME_STATUS)
+        self.assertEqual(status, TestData.ALERT_ADD_FROM_HOME)

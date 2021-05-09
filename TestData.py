@@ -8,6 +8,10 @@ class TestData():
     BASE_URL = "http://automationpractice.com/index.php"
 
 
+    # EMAIL SIGN IN
+    SIGN_IN_EMAIL = 'narto@konoha.com'
+    SIGN_IN_PASSWORD = '123narto321'
+
     # EMAIL SIGN UP (VALID)
     EMAIL_ALREADY_REGISTERED = "narto@konoha.com"
 
@@ -50,3 +54,6 @@ class TestData():
     ALERT_REGISTER_SUCCESS = "Welcome to your account. Here you can manage all of your personal information and orders."
     ALERT_REGISTER_FAILED = "There are 6 errors"
     ALERT_ALREADY_REGISTERED = "An account using this email address has already been registered. Please enter a valid password or request a new one."
+
+    # ALERT ADD TO CART
+    ALERT_ADD_FROM_HOME = 'Product successfully added to your shopping cart'

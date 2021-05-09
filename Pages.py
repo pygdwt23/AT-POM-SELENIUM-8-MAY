@@ -70,10 +70,27 @@ class HomePage(BasePage):
         self.click(Locators.SIGN_IN_BUTTON)
         self.is_visible(Locators.REG_EMAIL_FIELD)
 
+    def logo(self):
+        self.click(Locators.LOGO_URL)
+
+    def add_from_home(self):
+        self.move_element_to(Locators.PRODUCT_CARD)
+        self.click(Locators.ADD_TO_CART_BUTTON)
+        self.is_visible(Locators.ADD_FROM_HOME_STATUS)
 
 class AuthPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
+
+    def sign_in_success(self):
+        # Type Email
+        self.enter_text(Locators.SIGN_IN_EMAIL_FIELD, TestData.SIGN_IN_EMAIL)
+
+        # Type Password
+        self.enter_text(Locators.SIGN_IN_PASSWORD_FIELD, TestData.SIGN_IN_PASSWORD)
+
+        # Click Sign In Button
+        self.click(Locators.SUBMIT_SIGN_IN)
 
     def register_success(self):
         # Type Email
