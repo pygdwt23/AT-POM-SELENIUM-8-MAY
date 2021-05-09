@@ -44,6 +44,20 @@ class Locators():
     REG_ALERT_FAILED = (By.XPATH, '//*[@id="center_column"]/div/p')
     REG_ALERT_ALREADY_REGISTERED = (By.XPATH, '//*[@id="create_account_error"]/ol/li')
 
+    # CATEGORY PAGE
+    CATEGORY_PRODUCT_CARD = '//*[@id="center_column"]/ul/li[4]/div'
+    CATEGORY_ADD_TO_CART_BUTTON = (By.XPATH, '//*[@id="center_column"]/ul/li[4]/div/div[2]/div[2]/a[1]')
+    CATEGORY_ADD_TO_CART_STATUS = (By.XPATH, '//*[@id="layer_cart"]/div[1]/div[1]/h2')
+
+    # PRODUCT DETAIL PAGE
+    DETAIL_ADD_TO_CART_BUTTON = (By.NAME, 'Submit')
+    DETAIL_PRODUCT_STATUS = (By.XPATH, '//*[@id="layer_cart"]/div[1]/div[1]/h2')
+
+    # SEARCH PAGE
+    SEARCH_PRODUCT_CARD = '//*[@id="center_column"]/ul/li[4]/div'
+    SEARCH_ADD_TO_CART_BUTTON = (By.XPATH, '//*[@id="center_column"]/ul/li[4]/div/div[2]/div[2]/a[1]/span')
+    SEARCH_PRODUCT_STATUS = (By.XPATH, '//*[@id="layer_cart"]/div[1]/div[1]/h2')
+
     # MY ACCOUNT PAGE
     MY_ORDER_BUTTON = (By.XPATH, '//*[@id="center_column"]/div/div[1]/ul/li[1]/a/span')
     MY_ADDRESSES_BUTTON = (By.XPATH, '//*[@id="center_column"]/div/div[1]/ul/li[3]/a/span')

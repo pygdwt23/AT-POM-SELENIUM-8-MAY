@@ -78,6 +78,27 @@ class HomePage(BasePage):
         self.click(Locators.ADD_TO_CART_BUTTON)
         self.is_visible(Locators.ADD_FROM_HOME_STATUS)
 
+    def category(self):
+        self.click(Locators.CATEGORIES_WOMEN_BUTTON)
+
+    def add_from_category(self):
+        self.move_element_to(Locators.CATEGORY_PRODUCT_CARD)
+        self.click(Locators.CATEGORY_ADD_TO_CART_BUTTON)
+        self.is_visible(Locators.CATEGORY_ADD_TO_CART_STATUS)
+
+    def add_from_details(self):
+        self.move_element_to(Locators.PRODUCT_CARD)
+        self.click(Locators.MORE_BUTTON)
+        self.click(Locators.DETAIL_ADD_TO_CART_BUTTON)
+        self.is_visible(Locators.DETAIL_PRODUCT_STATUS)
+
+    def add_from_search(self):
+        self.enter_text(Locators.SEARCH_FIELD, TestData.SEARCH_VALUE)
+        self.click(Locators.SEARCH_SUBMIT)
+        self.move_element_to(Locators.SEARCH_PRODUCT_CARD)
+        self.click(Locators.SEARCH_ADD_TO_CART_BUTTON)
+        self.is_visible(Locators.SEARCH_PRODUCT_STATUS)
+
 class AuthPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)

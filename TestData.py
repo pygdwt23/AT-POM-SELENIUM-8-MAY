@@ -50,6 +50,8 @@ class TestData():
     SIGN_UP_INVALID_MOBILE_PHONE = "OB!0989999"
     SIGN_UP_INVALID_ADDRESS_ALIAS = "H0M3!"
 
+    SEARCH_VALUE = 'dress'
+
     # ALERT REGISTER
     ALERT_REGISTER_SUCCESS = "Welcome to your account. Here you can manage all of your personal information and orders."
     ALERT_REGISTER_FAILED = "There are 6 errors"
@@ -57,3 +59,6 @@ class TestData():
 
     # ALERT ADD TO CART
     ALERT_ADD_FROM_HOME = 'Product successfully added to your shopping cart'
+    ALERT_ADD_FROM_CATEGORY = 'Product successfully added to your shopping cart'
+    ALERT_ADD_FROM_DETAILS = 'Product successfully added to your shopping cart'
+    ALERT_ADD_FROM_SEARCH = 'Product successfully added to your shopping cart'
