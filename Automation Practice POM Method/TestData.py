@@ -52,6 +52,15 @@ class TestData():
 
     SEARCH_VALUE = 'dress'
 
+    # MY ADDRESS DATA
+    NEW_ADDRESS_VALUE = '152  Lochmere Lane Apt. 911'
+    NEW_CITY_VALUE = fake.city()
+    NEW_STATE_VALUE = 'Arizona'
+    NEW_POST_CODE_VALUE = '06103'
+    NEW_MOBILE_PHONE_VALUE = fake.phone_number()
+    NEW_ADDITIONAL_INFO_VALUE = fake.text()
+    NEW_ADDRESS_ALIAS_VALUE = fake.street_name()
+
     # ALERT REGISTER
     ALERT_REGISTER_SUCCESS = "Welcome to your account. Here you can manage all of your personal information and orders."
     ALERT_REGISTER_FAILED = "There are 6 errors"

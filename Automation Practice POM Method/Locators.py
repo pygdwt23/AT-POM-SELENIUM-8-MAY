@@ -6,6 +6,7 @@ class Locators():
     SIGN_IN_BUTTON = (By.CSS_SELECTOR, "a.login")
     PRODUCT_CARD = '//*[@id="homefeatured"]/li[2]'
     PRODUCT_CARD_DRESS = '//*[@id="homefeatured"]/li[7]'
+    PRODUCT_CARD_PRINTED_DRESS = '//*[@id="homefeatured"]/li[4]/div'
     MORE_BUTTON = (By.XPATH, '//*[@id="homefeatured"]/li[2]/div/div[2]/div[2]/a[2]/span')
     ADD_TO_CART_BUTTON = (By.XPATH, '//*[@id="homefeatured"]/li[7]/div/div[2]/div[2]/a[1]/span')
     QUICKVIEW_BUTTON = (By.XPATH, '//*[@id="homefeatured"]/li[2]/div/div[1]/div/a[2]/span')
@@ -67,6 +68,9 @@ class Locators():
     # PRODUCT DETAIL PAGE
     DETAIL_ADD_TO_CART_BUTTON = (By.NAME, 'Submit')
     DETAIL_PRODUCT_STATUS = (By.XPATH, '//*[@id="layer_cart"]/div[1]/div[1]/h2')
+    WISHLIST_BUTTON = (By.ID, 'wishlist_button')
+    WISHLIST_CLOSE_BTN = (By.XPATH, '//*[@id="product"]/div[2]/div/div/a')
+    MY_ACCOUNT = (By.CSS_SELECTOR, 'a.account')
 
     # SEARCH PAGE
     SEARCH_PRODUCT_CARD = '//*[@id="center_column"]/ul/li[4]/div'
@@ -78,12 +82,18 @@ class Locators():
     MY_ADDRESSES_BUTTON = (By.XPATH, '//*[@id="center_column"]/div/div[1]/ul/li[3]/a/span')
     MY_WISHLISTS_BUTTON = (By.XPATH, '//*[@id="center_column"]/div/div[2]/ul/li/a/span')
 
+    # MY WISHLIST PAGE
+    WISHLIST_DELETE_BTN = '//*[@id="wishlist_32924"]/td[6]/a/i'
+
+    # MY ORDER PAGE
+    REORDER_BTN = (By.XPATH, '//*[@id="order-list"]/tbody/tr[1]/td[7]/a[2]')
+
     # MY ADDRESS PAGE
-    ADDRESS_DELETE_BUTTON = (By.XPATH, '//*[@id="center_column"]/div[1]/div/div/ul/li[9]/a[2]/span')
+    ADDRESS_DELETE_BUTTON = '//*[@id="center_column"]/div[1]/div[1]/div[1]/ul/li[9]/a[2]/span'
     ADDRESS_ADD_NEW_BUTTON = (By.XPATH, '//*[@id="center_column"]/div[2]/a/span')
     ADDRESS_ADDRESS1_FIELD = (By.ID, 'address1')
     ADDRESS_CITY_FIELD = (By.ID, 'city')
-    ADDRESS_STATE_FIELD = (By.ID, 'id_state')
+    ADDRESS_STATE_FIELD = 'id_state'
     ADDRESS_POSTCODE_FIELD = (By.ID, 'postcode')
     ADDRESS_COUNTRY_FIELD = (By.ID, 'id_country')
     ADDRESS_MOBILE_PHONE_FIELD = (By.ID, 'phone_mobile')

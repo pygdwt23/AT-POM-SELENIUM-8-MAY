@@ -60,6 +60,12 @@ class BasePage():
         hover = self.driver.find_element_by_xpath(locator)
         self.action.move_to_element(hover).perform()
 
+    # Fungsi Click JS Alert
+    def alert_click(self, locator):
+        self.driver.find_element_by_xpath(locator).click()
+        self.driver.switch_to.alert.accept()
+
+
 class HomePage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)
@@ -288,3 +294,103 @@ class AuthPage(BasePage):
 
         # Click Create an account button
         self.click(Locators.SUBMIT_CREATE_ACCOUNT)
+
+class MyAccountPage(BasePage):
+    def reorder(self):
+        # Click My Order
+        self.click(Locators.MY_ORDER_BUTTON)
+
+        # Click Reorder
+        self.click(Locators.REORDER_BTN)
+
+        # Click Proceed to Checkout
+        self.click(Locators.PROCEED_TO_CHECKOUT_BTN_SUMMARY)
+
+        # Click Proceed to Checkout
+        self.click(Locators.PROCEED_TO_CHECKOUT_BTN_ADDRESS)
+
+        # Click Checkbox Proceed to Checkout
+        self.click(Locators.CHECKOUT_AGREE_CHECK)
+        self.click(Locators.PROCEED_TO_CHECKOUT_BTN_SHIPPING)
+
+        # Click Payment Type
+        self.click(Locators.CHECKOUT_BY_CHECK)
+
+        # Click Confirm Order
+        self.click(Locators.CHECKOUT_CONFIRM_ORDER_BTN)
+
+        # Wait for visible element
+        self.is_visible(Locators.CHECKOUT_STATUS_BY_CHECK)
+
+    def add_new_address(self):
+
+        # Click My Address Button
+        self.click(Locators.MY_ADDRESSES_BUTTON)
+
+        # Click Add New Adress Button
+        self.click(Locators.ADDRESS_ADD_NEW_BUTTON)
+
+        # Type Address
+        self.enter_text(Locators.ADDRESS_ADDRESS1_FIELD, TestData.NEW_ADDRESS_VALUE)
+
+        # Type City
+        self.enter_text(Locators.ADDRESS_CITY_FIELD, TestData.NEW_CITY_VALUE)
+
+        # Select State
+        self.select_dropdown_by_visible_text(Locators.ADDRESS_STATE_FIELD, TestData.NEW_STATE_VALUE)
+
+        # Type Zip / Postal Code
+        self.enter_text(Locators.ADDRESS_POSTCODE_FIELD, TestData.NEW_POST_CODE_VALUE)
+
+        # Type Mobile Phone
+        self.enter_text(Locators.ADDRESS_MOBILE_PHONE_FIELD, TestData.NEW_MOBILE_PHONE_VALUE)
+
+        # Type New Additional Info
+        self.enter_text(Locators.ADDRESS_ADDITIONAL_INFO, TestData.NEW_ADDITIONAL_INFO_VALUE)
+
+        # Type Address Alias
+        self.clear_text(Locators.ADDRESS_ALIAS_FIELD)
+        self.enter_text(Locators.ADDRESS_ALIAS_FIELD, TestData.NEW_ADDRESS_ALIAS_VALUE)
+
+        # Click Save Address
+        self.click(Locators.ADDRESS_SAVE_BUTTON)
+
+        # Wait for Status
+        self.is_visible(Locators.ADDRESS_INFO)
+
+    def remove_address(self):
+
+        # Click My Address Button
+        self.click(Locators.MY_ADDRESSES_BUTTON)
+
+        # Click Delete Button
+        self.alert_click(Locators.ADDRESS_DELETE_BUTTON)
+
+        # Wait for
+        self.is_visible(Locators.LOGO_URL)
+
+    def remove_wishlist(self):
+
+        # Hover to element
+        self.move_element_to(Locators.PRODUCT_CARD)
+
+        # Click More Button
+        self.click(Locators.MORE_BUTTON)
+
+        # Click Add to wishlist
+        self.click(Locators.WISHLIST_BUTTON)
+
+        # Click close button
+        self.click(Locators.WISHLIST_CLOSE_BTN)
+
+        # Click My Account (Account Name)
+        self.click(Locators.MY_ACCOUNT)
+
+        # Click My Wishlist
+        self.click(Locators.MY_WISHLISTS_BUTTON)
+
+        # Click Delete Wishlist Button
+        self.alert_click(Locators.WISHLIST_DELETE_BTN)
+
+        # Wait for
+        self.is_visible(Locators.LOGO_URL)

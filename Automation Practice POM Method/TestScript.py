@@ -9,7 +9,7 @@ import unittest
 from TestData import TestData
 from Locators import Locators
 from Pages import HomePage
-from Pages import AuthPage
+from Pages import AuthPage, MyAccountPage
 
 class BaseTest(unittest.TestCase):
     def setUp(self):
@@ -179,3 +179,89 @@ class CheckoutTest(BaseTest):
         # Assertion
         status = self.homepage.get_text(Locators.CHECKOUT_STATUS_BY_CHECK)
         self.assertEqual(TestData.ALERT_CHECKOUT_SUCCESS, status)
+
+class MyAccountTest(BaseTest):
+    def test_reorder(self):
+        # Load Homepage
+        self.homepage = HomePage(self.driver)
+
+        # Click Sign In Button
+        self.homepage.signin()
+
+        # Load Auth Page
+        self.authpage = AuthPage(self.homepage.driver)
+
+        # Sign in with Account
+        self.authpage.sign_in_success()
+
+        # Load MyAccount Page
+        self.myaccount = MyAccountPage(self.homepage.driver)
+
+        # Execute Reorder
+        self.myaccount.reorder()
+
+        # Assertion
+        status = self.homepage.get_text(Locators.CHECKOUT_STATUS_BY_CHECK)
+        self.assertEqual(TestData.ALERT_CHECKOUT_SUCCESS, status)
+
+    def test_add_new_address(self):
+        # Load Homepage
+        self.homepage = HomePage(self.driver)
+
+        # Click Sign In Button
+        self.homepage.signin()
+
+        # Load Auth Page
+        self.authpage = AuthPage(self.homepage.driver)
+
+        # Sign in with Account
+        self.authpage.sign_in_success()
+
+        # Load My Account Page
+        self.myaccount = MyAccountPage(self.homepage.driver)
+
+        # Execute Add New Address
+        self.myaccount.add_new_address()
+
+    def test_remove_address(self):
+        # Load Homepage
+        self.homepage = HomePage(self.driver)
+
+        # Click Sign In Button
+        self.homepage.signin()
+
+        # Load Auth Page
+        self.authpage = AuthPage(self.homepage.driver)
+
+        # Sign in with Account
+        self.authpage.sign_in_success()
+
+        # Load My Account Page
+        self.myaccount = MyAccountPage(self.homepage.driver)
+
+        # Execute Remove Address
+        self.myaccount.remove_address()
+
+    def test_remove_wishlist(self):
+        # Load Homepage
+        self.homepage = HomePage(self.driver)
+
+        # Click Sign In Button
+        self.homepage.signin()
+
+        # Load Auth Page
+        self.authpage = AuthPage(self.homepage.driver)
+
+        # Sign in with Account
+        self.authpage.sign_in_success()
+
+        # Click Website Logo
+        self.homepage.logo()
+
+        # Load My Account Page
+        self.myaccount = MyAccountPage(self.homepage.driver)
+
+        # Execute Remove Wishlist
+        self.myaccount.remove_wishlist()
+
+        time.sleep(5)
