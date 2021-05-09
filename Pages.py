@@ -99,6 +99,65 @@ class HomePage(BasePage):
         self.click(Locators.SEARCH_ADD_TO_CART_BUTTON)
         self.is_visible(Locators.SEARCH_PRODUCT_STATUS)
 
+    # CHECKOUT
+    def checkout_success_bankwire(self):
+        # Hover to product
+        self.move_element_to(Locators.PRODUCT_CARD_DRESS)
+
+        # Click Add to Cart
+        self.click(Locators.ADD_TO_CART_BUTTON)
+
+        # Click Proceed to checkout
+        self.click(Locators.PROCEED_TO_CHECKOUT_BTN_POP)
+
+        # Click Proceed to checkout
+        self.click(Locators.PROCEED_TO_CHECKOUT_BTN_SUMMARY)
+
+        # Click Proceed to checkout
+        self.click(Locators.PROCEED_TO_CHECKOUT_BTN_ADDRESS)
+
+        # Click Checkbox & Proceed to checkout
+        self.click(Locators.CHECKOUT_AGREE_CHECK)
+        self.click(Locators.PROCEED_TO_CHECKOUT_BTN_SHIPPING)
+
+        # Click Payment Type
+        self.click(Locators.CHECKOUT_BY_BANKWIRE)
+
+        # Click Confirm Order
+        self.click(Locators.CHECKOUT_CONFIRM_ORDER_BTN)
+
+        # Wait for status
+        self.is_visible(Locators.CHECKOUT_STATUS_BANKWIRE)
+
+    def checkout_success_check(self):
+        # Hover to product
+        self.move_element_to(Locators.PRODUCT_CARD_DRESS)
+
+        # Click Add to Cart
+        self.click(Locators.ADD_TO_CART_BUTTON)
+
+        # Click Proceed to checkout
+        self.click(Locators.PROCEED_TO_CHECKOUT_BTN_POP)
+
+        # Click Proceed to checkout
+        self.click(Locators.PROCEED_TO_CHECKOUT_BTN_SUMMARY)
+
+        # Click Proceed to checkout
+        self.click(Locators.PROCEED_TO_CHECKOUT_BTN_ADDRESS)
+
+        # Click Checkbox & Proceed to checkout
+        self.click(Locators.CHECKOUT_AGREE_CHECK)
+        self.click(Locators.PROCEED_TO_CHECKOUT_BTN_SHIPPING)
+
+        # Click Payment Type
+        self.click(Locators.CHECKOUT_BY_CHECK)
+
+        # Click Confirm Order
+        self.click(Locators.CHECKOUT_CONFIRM_ORDER_BTN)
+
+        # Wait for status
+        self.is_visible(Locators.CHECKOUT_STATUS_BY_CHECK)
+
 class AuthPage(BasePage):
     def __init__(self, driver):
         super().__init__(driver)

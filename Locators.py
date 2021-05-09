@@ -5,14 +5,29 @@ class Locators():
     # Homepage
     SIGN_IN_BUTTON = (By.CSS_SELECTOR, "a.login")
     PRODUCT_CARD = '//*[@id="homefeatured"]/li[2]'
+    PRODUCT_CARD_DRESS = '//*[@id="homefeatured"]/li[7]'
     MORE_BUTTON = (By.XPATH, '//*[@id="homefeatured"]/li[2]/div/div[2]/div[2]/a[2]/span')
-    ADD_TO_CART_BUTTON = (By.XPATH, '//*[@id="homefeatured"]/li[2]/div/div[2]/div[2]/a[1]/span')
+    ADD_TO_CART_BUTTON = (By.XPATH, '//*[@id="homefeatured"]/li[7]/div/div[2]/div[2]/a[1]/span')
     QUICKVIEW_BUTTON = (By.XPATH, '//*[@id="homefeatured"]/li[2]/div/div[1]/div/a[2]/span')
     CATEGORIES_WOMEN_BUTTON = (By.XPATH,'//*[@id="footer"]/div/section[2]/div/div/ul/li/a')
     SEARCH_FIELD = (By.ID, 'search_query_top')
     SEARCH_SUBMIT = (By.NAME, 'submit_search')
     LOGO_URL = (By.XPATH, '//*[@id="header_logo"]/a/img')
     ADD_FROM_HOME_STATUS = (By.XPATH, '//*[@id="layer_cart"]/div[1]/div[1]/h2')
+
+    # PRODUCT POP UP
+    PROCEED_TO_CHECKOUT_BTN_POP = (By.XPATH, '//*[@id="layer_cart"]/div[1]/div[2]/div[4]/a/span')
+
+    # CHECKOUT PAGE
+    PROCEED_TO_CHECKOUT_BTN_SUMMARY = (By.XPATH, '//*[@id="center_column"]/p[2]/a[1]/span')
+    PROCEED_TO_CHECKOUT_BTN_ADDRESS = (By.XPATH, '//*[@id="center_column"]/form/p/button/span')
+    CHECKOUT_AGREE_CHECK = (By.ID, 'uniform-cgv')
+    PROCEED_TO_CHECKOUT_BTN_SHIPPING = (By.XPATH, '//*[@id="form"]/p/button/span')
+    CHECKOUT_BY_BANKWIRE = (By.CSS_SELECTOR, 'a.bankwire')
+    CHECKOUT_BY_CHECK = (By.CSS_SELECTOR, 'a.cheque')
+    CHECKOUT_CONFIRM_ORDER_BTN = (By.XPATH, '//*[@id="cart_navigation"]/button/span')
+    CHECKOUT_STATUS_BANKWIRE = (By.XPATH, '//*[@id="center_column"]/div/p/strong')
+    CHECKOUT_STATUS_BY_CHECK = (By.XPATH, '//*[@id="center_column"]/p[1]')
 
     # AUTH PAGE
     REG_EMAIL_FIELD = (By.ID, 'email_create')

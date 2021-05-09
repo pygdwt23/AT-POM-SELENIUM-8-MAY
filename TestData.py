@@ -62,3 +62,6 @@ class TestData():
     ALERT_ADD_FROM_CATEGORY = 'Product successfully added to your shopping cart'
     ALERT_ADD_FROM_DETAILS = 'Product successfully added to your shopping cart'
     ALERT_ADD_FROM_SEARCH = 'Product successfully added to your shopping cart'
+
+    # ALERT CHECKOUT
+    ALERT_CHECKOUT_SUCCESS = 'Your order on My Store is complete.'

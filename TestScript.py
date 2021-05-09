@@ -132,3 +132,50 @@ class AddToCartTest(BaseTest):
         # Assertion
         status = self.homepage.get_text(Locators.SEARCH_PRODUCT_STATUS)
         self.assertEqual(status, TestData.ALERT_ADD_FROM_SEARCH)
+
+class CheckoutTest(BaseTest):
+    def test_checkout_by_bankwire(self):
+        # Load Homepage
+        self.homepage = HomePage(self.driver)
+
+        # Click Sign In Button
+        self.homepage.signin()
+
+        # Load Auth Page
+        self.authpage = AuthPage(self.homepage.driver)
+
+        # Sign in with Account
+        self.authpage.sign_in_success()
+
+        # Click Website Logo
+        self.homepage.logo()
+
+        # Checkout Success
+        self.homepage.checkout_success_bankwire()
+
+        # Assertion
+        status = self.homepage.get_text(Locators.CHECKOUT_STATUS_BANKWIRE)
+        self.assertEqual(TestData.ALERT_CHECKOUT_SUCCESS, status)
+
+    def test_checkout_by_check(self):
+        # Load Homepage
+        self.homepage = HomePage(self.driver)
+
+        # Click Sign In Button
+        self.homepage.signin()
+
+        # Load Auth Page
+        self.authpage = AuthPage(self.homepage.driver)
+
+        # Sign in with Account
+        self.authpage.sign_in_success()
+
+        # Click Website Logo
+        self.homepage.logo()
+
+        # Checkout Success
+        self.homepage.checkout_success_check()
+
+        # Assertion
+        status = self.homepage.get_text(Locators.CHECKOUT_STATUS_BY_CHECK)
+        self.assertEqual(TestData.ALERT_CHECKOUT_SUCCESS, status)
