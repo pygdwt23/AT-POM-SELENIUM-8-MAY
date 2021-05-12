@@ -80,7 +80,7 @@ class HomePage(BasePage):
         self.click(Locators.LOGO_URL)
 
     def add_from_home(self):
-        self.move_element_to(Locators.PRODUCT_CARD)
+        self.move_element_to(Locators.PRODUCT_CARD_DRESS)
         self.click(Locators.ADD_TO_CART_BUTTON)
         self.is_visible(Locators.ADD_FROM_HOME_STATUS)
 

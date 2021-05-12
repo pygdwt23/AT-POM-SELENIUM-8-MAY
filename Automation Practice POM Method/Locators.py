@@ -83,7 +83,7 @@ class Locators():
     MY_WISHLISTS_BUTTON = (By.XPATH, '//*[@id="center_column"]/div/div[2]/ul/li/a/span')
 
     # MY WISHLIST PAGE
-    WISHLIST_DELETE_BTN = '//*[@id="wishlist_32924"]/td[6]/a/i'
+    WISHLIST_DELETE_BTN = '//*[@id="wishlist_33012"]/td[6]/a/i'
 
     # MY ORDER PAGE
     REORDER_BTN = (By.XPATH, '//*[@id="order-list"]/tbody/tr[1]/td[7]/a[2]')
